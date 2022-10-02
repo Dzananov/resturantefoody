@@ -1,3 +1,3 @@
 from django.shortcuts import render
+from Reservations.models import Reservations
 
-# Create your views here.
