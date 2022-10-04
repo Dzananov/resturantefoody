@@ -8,3 +8,8 @@ class ReservationList(generic.ListView):
     template_name = 'index.html'
 
 
+class BookAtable(generic.CreateView):
+    model = Reservations
+    template_name = 'book_table.html'
+    fields = '__all__'
+

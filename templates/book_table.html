@@ -3,12 +3,12 @@
 {% block content %}
 
 
-<h1>Add blog post</h1>
+<h1>Reserve a Table</h1>
 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button>Post</button>
+    <button>Send</button>
 </form>
 
 
