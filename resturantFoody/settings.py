@@ -59,6 +59,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'resturantFoody.urls'
 
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

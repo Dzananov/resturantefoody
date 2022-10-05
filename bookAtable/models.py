@@ -1,13 +1,14 @@
 from django.db import models
 
-# Create your models here.
-class Reservations(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField()
-    phone = models.IntegerField()
-    number_of_persones = models.IntegerField()
-    date = models.DateField()
-    time = models.TimeField()
+
+class Table(models.Model):
+    TABLE_SEATS = (
+        ('Two', '2 SEATS'),
+        ('Four', '4 SEATS'),
+        ('Eight', '8 SEATS'),
+    )
+    number = models.IntegerField()
+    seats = models.CharField(max_length=5, choices=TABLE_SEATS)
 
     def __str__(self):
-        return self.name
+        return f'{self.number} at a {self.seats} seated table.'
