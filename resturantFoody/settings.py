@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'bookAtable',
+    'bookAtable.reservation_function',
 ]
 
 MIDDLEWARE = [

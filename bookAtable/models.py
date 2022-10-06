@@ -12,7 +12,7 @@ class Table(models.Model):
     seats = models.CharField(max_length=5, choices=TABLE_SEATS)
 
     def __str__(self):
-        return f'Table number{self.number} for {self.seats} costumers.'
+        return f'Table number {self.number} for maximum {self.seats} costumers.'
 
 
 class Reservation(models.Model):
