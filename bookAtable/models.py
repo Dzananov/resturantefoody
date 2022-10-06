@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class Table(models.Model):
@@ -12,13 +12,14 @@ class Table(models.Model):
     seats = models.CharField(max_length=5, choices=TABLE_SEATS)
 
     def __str__(self):
-        return f'{self.number} at a {self.seats} seated table.'
+        return f'Table number{self.number} for {self.seats} costumers.'
 
 
 class Reservation(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    costumer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="costumer_reservation")
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    date_time = models.DateTimeField()
+    arriving_time = models.DateTimeField()
+    leaving_time = models.DateTimeField()
 
     def __str__(self):
-        return f'{self.user} had reserved a {self.table} seated table on {self.date_time}'
+        return f'{self.costumer} had reserved  {self.table} table on {self.arriving_time} and is leaving {self.leaving_time}'
