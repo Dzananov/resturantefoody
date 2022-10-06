@@ -1,12 +1,17 @@
 from django.shortcuts import render
-from .models import Table, Reservation
-from django.views import generic
+from .models import Table
+from django.views import generic, View
 # from .forms import ReservTableform
 
 
-class TableList(generic.Listview):
+# class TableList(generic.ListView):
+#     model = Table
+
+
+# class ReservationList(generic.ListView):
+#     model = Reservation
+
+class TableList(generic.CreateView):
     model = Table
-
-
-class ReservationList(generic.ListView):
-    model = Reservation
+    template_name = "table_list.html"
+    fields = '__all__'
