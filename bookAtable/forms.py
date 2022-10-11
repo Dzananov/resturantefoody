@@ -1,12 +1,17 @@
 from django import forms
+from .models import Reservation
 
 
-class AvailbilityForm(forms.Form):
-    TABLE_SEATS = (
-        ('Two', '2 SEATS'),
-        ('Four', '4 SEATS'),
-        ('Eight', '8 SEATS'),
+class BookingForm(forms.ModelForm):
+    name = forms.CharField(forms.TextInput(attrs={'placeholder':'Name'})
     )
-    room_category = forms.ChoiceField(choices=TABLE_SEATS, required=True)
-    arriving_time = forms.DateTimeField(required=True)
-    leaving_time = forms.DateTimeField(required=True)
+    email = forms.EmailField(forms.TextInput(attrs={'placeholder'= 'Email'})
+    )
+
+    class Meta:
+        model = Reservation
+        widgets = {
+            'date': DateInput(),
+        }
+
+ 

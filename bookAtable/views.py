@@ -1,18 +1,16 @@
-from django.shortcuts import render
-from .models import Table, Reservation
+from django.shortcuts import render, HttpResponse
+from .models import Reservation
 from django.views import generic, View
-from .forms import AvailbilityForm
+from .forms import BookingForm
 from bookAtable.reservation_function.avalible import check_available
 # from .forms import ReservTableform
 
 
-class ReservationList(generic.CreateView):
-    model = Reservation
-    template_name = "reservation_list.html"
-    fields = '__all__'
+def home(request):
+    return(request, 'index.html')
 
 
-class TableList(generic.CreateView):
+def book_a_Table(request):
     model = Table
     template_name = "table_list.html"
     fields = '__all__'
@@ -21,22 +19,11 @@ class TableList(generic.CreateView):
 class ReservationView(generic.FormView):
     form_class = AvailbilityForm
     template_name = 'availbility_form.html'
+    model = Reservation
 
-    def form_valid(self, form):
-        data = form.cleaned_data
-        table_list = Table.objects.filter(seats=data['table_seats'])
-        available_tables = []
-        for table in table_list:
-            if check_available(table, data['arriving_time'], data['leaving_time']):
-                available_tables.append(table)
-
-        if len(available_tables) > 0:
-            table = available_tables[0]
-            reservation = Reservation.objects.create(
-                costumer=request.costumer,
-                table=table,
-                arriving_time=data['arriving_time'],
-                leaving_time=data['leaving_time']
+    def AvailbilityForm():
+        Table.objects.filter(table=table, arriving_time=arriving_time).annotate(
+            is_booked_on=Exists(Reservation.objects.filter(table_avaibility=OutRef('pk'), date=date)
             )
-        reservation.save()
-        return HttpResponse(reservation)
+            ).filter(is_booked_on=False)
+

@@ -2,24 +2,36 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Table(models.Model):
-    TABLE_SEATS = (
-        ('Two', '2 SEATS'),
-        ('Four', '4 SEATS'),
-        ('Eight', '8 SEATS'),
-    )
-    number = models.IntegerField()
-    seats = models.CharField(max_length=5, choices=TABLE_SEATS)
+GUESTS = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+)
 
-    def __str__(self):
-        return f'Table number {self.number} for maximum {self.seats} costumers.'
+
+TIME_FRAME = (
+    ('16-17', '16-17'),
+    ('17-18', '17-18'),
+    ('18-19', '18-19'),
+    ('19-20', '19-20'),
+)
 
 
 class Reservation(models.Model):
     costumer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="costumer_reservation")
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    arriving_time = models.DateTimeField()
-    leaving_time = models.DateTimeField()
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    guests = models.IntegerField(choices=GUESTS, default='2')
+    time = models.IntegerField(choices=TIME_FRAME, default='17-18')
+    date = models.DateField()
+
+    class Meta:
+        ordering = ('date', 'time')
+        unique_together = ('guests', 'time', 'date')
 
     def __str__(self):
-        return f'{self.costumer} had reserved  {self.table} table on {self.arriving_time} and is leaving {self.leaving_time}'
+        return self.name
+  
