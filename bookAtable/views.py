@@ -11,8 +11,13 @@ def home(request):
 
 
 class book_a_Table(generic.ListView):
+    """This shows the bookingform if user is loged in. """
     model = Reservation
     template_name = "booking_form.html"
+    if request.method == 'POST':
+        form = BookingForm(data=request.POST)
+        if form.is_valid():
+            BookingForm= save
 
 
 # class ReservationView(generic.FormView):
