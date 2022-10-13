@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 # Create your tests here.
-#Testing to check avalibility#
+#Testing to check avalibility
 def get_avalible_bookings():
     return {(guests, time) for time in dict(TIME_FRAME).keys() for day in dict(GUESTS).keys()}
 #Testing the boo_table view, here it is not finished#
@@ -36,7 +36,6 @@ class book_a_Table(View):
   def booking(request):
         if request.method == 'POST':
            form = BookingForm(data=request.POST)
-            
             if form.is_valid():
                 booking_form = form.save(commit=False)
                 booking_form.user = request.user
