@@ -5,9 +5,14 @@ from .forms import BookingForm
 
 # from .forms import ReservTableform
 
+# Homepage is a simple page with e menu section where user can redirect further
+
 
 def home(request):
     return render(request, 'index.html')
+
+# When user goes to book a table he/she first of all must sign up to an accuont. Fuction redirects user to
+# my bookingpage if the form is valid
 
 
 class book_a_Table(generic.CreateView):
@@ -26,6 +31,7 @@ class book_a_Table(generic.CreateView):
     #             messages.error(request, 'Error in Booking')
     #             return redirect(book_a_Table)
 # class my_page(generic.ListView):
+
 # class ReservationView(generic.FormView):
 #   form_class = AvailbilityForm
 #   template_name = 'booking_form.html'
