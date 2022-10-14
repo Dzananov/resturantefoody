@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: #6478a2;
+    background-color: #a5e7be;
 }
 
 .brand {
@@ -28,9 +28,7 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
+
 
 .thin {
     font-weight: 300;
@@ -41,7 +39,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #36824a;
 }
 
 .main-bg {
@@ -148,14 +146,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #a1eca6;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #8be7a0;
     background: transparent;
     border: none;
 }
