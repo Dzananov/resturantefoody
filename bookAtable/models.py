@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+#a reservation model that holds how many guest are allwod at the same table and timeframes
 GUESTS = (
     ('1', '1'),
     ('2', '2'),

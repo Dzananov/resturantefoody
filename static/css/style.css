@@ -1,5 +1,24 @@
+/**My CSS**/
+
+.bakery {
+    margin-top: 300px;
+}
+.textabout {
+    background-color: #ffffff;
+    padding: 1em;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.picture {
+   display: flex;
+}
+.hamburgerimage {
+    
+    height: 36px;
+}
+
 body {
-    background-color: #F9FAFC;
+    background-color: #6478a2;
 }
 
 .brand {

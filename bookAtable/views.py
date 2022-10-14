@@ -11,7 +11,7 @@ from .forms import BookingForm
 def home(request):
     return render(request, 'index.html')
 
-# When user goes to book a table he/she first of all must sign up to an accuont. Fuction redirects user to
+# When user goes to book a table he/she first of all must sign up to an account. Fuction redirects user to
 # my bookingpage if the form is valid
 
 
