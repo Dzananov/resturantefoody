@@ -15,22 +15,28 @@ def home(request):
 # my bookingpage if the form is valid
 
 
-class book_a_Table(generic.CreateView):
-    model = Reservation
-    template_name = 'booking_form.html'
+class book_a_Table(View):
+ 
+    def get(self):
+        queryset = Table.objects.filter(status=0)
+        return render(request, 'booking_form')
+
+# def booking(request):
+#     if request.method == 'POST':
+#         form_class = BookingForm(data=request.POST)
+#         return render(request, 'booking_form')
+            #if form.is_valid():
+            # #     BookingForm = form.save(commit=False)
+            # #     messages.success(request, 'Confirmed Booking')
+            # #     return redirect('my_page')
+            # # else:
+            # #     messages.error(request, 'Error in Booking')
+            # #     return redirect(book_a_Table)
+
+
+class my_page(generic.ListView):
+    template_name = 'mybookings.html'
     fields = '__all__'
-    # def booking(request):
-    #     if request.method == 'POST':
-    #         form_class = BookingForm(data=request.POST)
-    #         return render(request, 'booking_form*')
-    #         if form.is_valid():
-    #             BookingForm = form.save(commit=False)
-    #             messages.success(request, 'Confirmed Booking')
-    #             return redirect('my_page')
-    #         else:
-    #             messages.error(request, 'Error in Booking')
-    #             return redirect(book_a_Table)
-# class my_page(generic.ListView):
 
 # class ReservationView(generic.FormView):
 #   form_class = AvailbilityForm
