@@ -41,7 +41,7 @@
                     
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'booking_form' %}">My Booking Page</a>
+                        <a class="nav-link" href="{% url 'booking' %}">My Booking Page</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -58,7 +58,7 @@
                         <a class="nav-link" href="#">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{% url 'my_page' %}">My Bookings</a>
                     </li>
                 </ul>
                 

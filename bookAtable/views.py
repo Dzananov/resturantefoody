@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Reservation
 from django.views import generic, View
 from .forms import BookingForm
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 # from .forms import ReservTableform
 
@@ -15,30 +17,25 @@ def home(request):
 # my bookingpage if the form is valid
 
 
-class book_a_Table(View):
- 
-    def get(self):
-        queryset = Table.objects.filter(status=0)
-        return render(request, 'booking_form')
-
-# def booking(request):
-#     if request.method == 'POST':
-#         form_class = BookingForm(data=request.POST)
-#         return render(request, 'booking_form')
-            #if form.is_valid():
-            # #     BookingForm = form.save(commit=False)
-            # #     messages.success(request, 'Confirmed Booking')
-            # #     return redirect('my_page')
-            # # else:
-            # #     messages.error(request, 'Error in Booking')
-            # #     return redirect(book_a_Table)
+def book_a_Table(request):
+    if request.method == 'POST':
+        form = BookingForm(data=request.POST)
+        if form.is_valid():
+            booking_form.user = request.user
+            booking_form.save()
+            messages.success(request, 'Booking is Complete')
+            return redirect('my_page')
+        else:
+            messages.error(request, 'Invalid form')
+    form = BookingForm()
+    return render(request, 'booking_form.html', {'form': form})
 
 
-class my_page(generic.ListView):
-    template_name = 'mybookings.html'
-    fields = '__all__'
-
-# class ReservationView(generic.FormView):
-#   form_class = AvailbilityForm
-#   template_name = 'booking_form.html'
-#   model = Reservation
+def my_page(request):
+    if request.user.is_authenticated:
+        model = Reservation
+        bookings = Reservation.objects.filter(costumer=request.user)
+        context = {
+            'bookings': bookings
+        }
+        return render(request, 'mybookings.html')

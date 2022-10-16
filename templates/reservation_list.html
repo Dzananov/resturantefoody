@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reservation_list</title>
-</head>
-<body>
-    hey world
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <a href="{% url 'book_a_table' %}" class="post-link">
+                                <h2 class="card-title">{{ post.number }}</h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="row">
+                
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
