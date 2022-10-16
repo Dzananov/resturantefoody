@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <h1>My Bookings</h1>
-                <p>Date: {{booking.date}}</p>
-                <button>Book</button>
-        </form>
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <ul class="font-monospace">
+                    <li class='mb-2'>Name:   {{ booking.name | safe }}</li>
+                    <li class='mb-2'>Email:   {{ reservation.email | safe }}</li>
+                    <li class='mb-2'>Guests:   {{ reservation.guest | safe }}</li>
+                    <li class='mb-2'>Time:   {{ reservation.time | safe }}</li>
+                    <li class='mb-2'>Date:   {{ reservation.date | safe }}</li>
+                </ul>
             </div>
-            
-            <div class="col-sm-12 col-md-6">Testing</div>
         </div>
     </div>
+</div>
 
 {% endblock %}

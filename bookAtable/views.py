@@ -28,7 +28,10 @@ def book_a_Table(request):
         else:
             messages.error(request, 'Invalid form')
     form = BookingForm()
-    return render(request, 'booking_form.html', {'form': form})
+    context = {
+        'form': form
+    }
+    return render(request, 'booking_form.html', context)
 
 
 def my_page(request):
@@ -38,4 +41,19 @@ def my_page(request):
         context = {
             'bookings': bookings
         }
-        return render(request, 'mybookings.html')
+        return render(request, 'mybookings.html', context)
+
+def edit_bookings(request, booking_id):
+    booking = get_object_or_404(Reservation, id=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(data=request.POST, instance=booking)
+        if form.is_valid():
+            booking_form.user = request.user
+            booking_form.save()
+            messages.success(request, 'Booking is Complete')
+            return redirect('my_page')
+    form = BookingForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_booking.html', context)
