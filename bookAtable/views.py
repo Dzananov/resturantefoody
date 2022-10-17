@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Reservation
 from django.views import generic, View
 from .forms import BookingForm
@@ -23,8 +23,8 @@ def menu(request):
 
 def book_a_Table(request):
     if request.method == 'POST':
-        form = BookingForm(data=request.POST)
-        if form.is_valid():
+        booking_form = BookingForm(data=request.POST)
+        if booking_form.is_valid():
             booking_form.user = request.user
             booking_form.save()
             messages.success(request, 'Booking is Complete')
@@ -47,11 +47,12 @@ def my_page(request):
         }
         return render(request, 'mybookings.html', context)
 
+
 def edit_bookings(request, booking_id):
     booking = get_object_or_404(Reservation, id=booking_id)
     if request.method == 'POST':
-        form = BookingForm(data=request.POST, instance=booking)
-        if form.is_valid():
+        booking_form = BookingForm(request.POST, instance=booking)
+        if booking_form.is_valid():
             booking_form.user = request.user
             booking_form.save()
             messages.success(request, 'Booking is Complete')
@@ -61,3 +62,10 @@ def edit_bookings(request, booking_id):
         'form': form
     }
     return render(request, 'edit_booking.html', context)
+
+
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Reservation, id=booking_id)
+    booking.delete()
+    return redirect('my_page')
+

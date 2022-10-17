@@ -4,26 +4,22 @@
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                <h3>Edit my Booking</h3>>
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
-                            <a href="{% url 'book_a_table' %}" class="post-link">
-                                <h2 class="card-title">{{ post.number }}</h2>
-                            </a>
-                        </div>
+                        <form method="POST" style="margin-top: 1.3em;">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button>Save Changes</button>
+                        </form>
                     </div>
                 </div>
                
             </div>
-            <div class="row">
-                
-                {% endfor %}
-
-            </div>
         </div>
     </div>
+</div>
+
+{% endblock %}
