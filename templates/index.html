@@ -1,16 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container marketing">
-        <div class="row">
-            <div class="image-container">
-                <img src= static/images/hamburgerhero.jpg class="img-fluid" alt="hamburger1">
-            </div>
-        </div>
+<!--My hero image and intro text-->
+<section id="hero" class="d-flex align-items-center">
     <div class="container marketing">
         <div class="row justify-content-center">
             <div class="col-md-7">
-                <h2>About Us</h2>
+                <h2 class="font-monospace">About Us</h2>
                 <br>
                 <p class="font-monospace">Welcome to Foody Hamburger Resturant! Foody was started in 2022 and is Based in Sweden, Malmö. We have two resturantes but hopefully we will be able to open
                     more resturantes outside of Malmö. Foody has developed a special hamburgersauce that makes our hamburger taste unique. All our ingridiences are from Sweden and therefor ecological. We can assure you that
@@ -18,12 +14,16 @@
                     than our magical sauce. You wont regrate visiting us!
                 </p>
             </div>
-    
+        </div>
+    </div>
+</section>
+    <!--about our bakery-->
+    <div class="container marketing">
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">Bakery</h2>
-                <p class="font-monospace">We bake our delicious bread at our own bakery. That way we can garantee that the bread is fresch when served. 
+                <h2 class="febg gv aturette-heading fw-normal lh-1">Bakery</h2>
+                <p id="abouttext" class="font-monospace textabout">We bake our delicious bread at our own bakery. That way we can garantee that the bread is fresch when served. 
                     We get provided by Swedish farmers for our grain. In that way we can keep oyr bread ecological. We also always use freschly baked bread and
                     yesterdays bread we donate to whoever is in need for it! We have different kinds of bread, white bread, dark bread, grainless-bread,
                     lactofriendly bread and bread with a base made of oats</p>
@@ -32,6 +32,7 @@
                 <img src="static/images/hamburger3.jpg" class="img-fluid" width="500" height="500" alt="hamburger2">
             </div>
         </div>
+        <!--about our meat-->
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-5 order-md-2">
@@ -44,5 +45,6 @@
                 <img src="static/images/cow.jpg" class="img-fluid" width="500" height="500" alt="hamburger2">
             </div>
         </div>
+    </div>
     
 {% endblock %}

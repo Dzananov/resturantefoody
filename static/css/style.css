@@ -18,7 +18,11 @@
 }
 
 body {
-    background-color: #a5e7be;
+    background-color: #efefef;
+}
+
+#abouttext {
+    color: rgb(249, 249, 249);
 }
 
 .brand {
@@ -28,114 +32,39 @@ body {
     color: #4A4A4F;
 }
 
-
+/**Base**/
 
 .thin {
     font-weight: 300;
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: rgb(67, 51, 51);
 }
 
 .dark-bg {
-    background-color: #36824a;
+    background-color: #3c594a;
 }
 
-.main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    border: none;
-    background-color: transparent;
-}
 
 .image-container {
     position: relative;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
+/*Buttons*/
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #8bdd94;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #185d22;
 }
 
 .link {
-    color: #23BBBB;
+    color: #8bdd94;
     text-decoration: none;
 }
 
@@ -157,3 +86,13 @@ body {
     background: transparent;
     border: none;
 }
+
+/*Testing*/
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("https://res.cloudinary.com/dqgykcdbd/image/upload/e_art:incognito/v1666044275/pexels-valeria-boltneva-1251198_q51fqh.jpg") top center;
+    background-size: cover;
+    position: relative;
+    padding: 0;
+  }

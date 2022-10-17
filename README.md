@@ -1,108 +1,157 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Foody Hamburger Resturant is A fictional resturante located in Malmö, Sweden. A app has been designed to informe the user about the resturant and what they can expect, give information about what kind of food the resturant serves, user are able to become members and reserve a table and afterwards users can manage their bookings
 
-Welcome Dzananov,
+# Content
+* [User Story](#User-Story)
+  * [Goal](#Goal)
+  * [User Stories](#User-Stories)
+  * [Agil Methodolgy](#Agile-Method)
+* [Design](#Design)
+ * [Colour](#Colour)
+ * [Font](#Font)
+ * [Wireframe](#Wireframe)
+* [Features](#Features)
+ * [Existing-Features](#Existing-Features)
+ * [Future-Features](#Future-Features)
+* [Technology](#Technology)
+ * [Testing] (#Testing)
+ * [Bugs](#Bugs)
+* [Credits](#Credits)
+* [Deployment](#Deployment)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+# User Story
+## Goal
+Goal of the site is for the resturant to provide users a management system where they can make bookings and manage them, read menu and some imformation about the returante.
 
-## Gitpod Reminders
+## User Stories
+* User should be able to sign up and later on sign in and sign out: 
+As a user I can sign up so that i can sign in, sign out and book a table
+* When signed in user should se a option for booking a table: 
+As a sitevisiter I can book a table so that I know I have a place to sit
+* When a table is booked user can manage the bookings troughout 'My page': 
+As a user I can edit my booking so that I can make changes
+As a user I can see my bookings so that I can manage them
+As a user I can delete my booking so that I dont have that booking anymore
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Agil Method
+Agil methodology aims to complete tasks in small steps. Thats the main method I used for this project. I set up my maintasks and tried to solve them one at a time. The method is designed for projects with alot of uncertinti. Where the user of the method is unsure how the outcome will happend. Therefor it is easyer to take small steps trought the project to learn what the outcome of one step will be before moving on to the next. I set up a project board with task that I had for the project to work. I had 4 main task, the 'big' tasks that the whole project evolved around. And this tasks led me to smaller tasks.
 
-Another blue button should appear to click: _Open Browser_.
+![bild](readme.images/issues.jpg)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Design
 
-A blue button should appear to click: _Make Public_,
+Design was choosen when the team got more clear. I have changed my design a couple of times but when I was sure about my resturante concept, it was easyer to design.
 
-Another blue button should appear to click: _Open Browser_.
+## Colour
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Font
 
-To log into the Heroku toolbelt CLI:
+## Wireframes
+PICTURE
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+# Features
+## Existing Features
+* Nav-bar
+The user can navigate troughout the page by clicking on the menu links.
+* Heroimage
+User will be greated by a beautiful, suiting picture.
+PICTURE
+* About
+In the aboutsection; user can read about the resturante
+PICTURE
+* Menu
+User can read the unique menu.
+PICTURE
+* Sign up
+User can sign up to be able to book a table and manage bookings
+PICTURE
+* Sign in and sign out
+User can sign in and out
+PICTURES
+* Manage bookings
+User can manage bookings trough 'My page'. User can edit and delete bookings
+PICTURE
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Future Features
 
-------
+* Add a function for booking a specifik table and also be able to see witch table are occupaid
+* Add a function for the user to be able to order food trough the page
 
-## Release History
+# Technology
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Languages
+* Python
+* JavaScript
+* HTML
+* CSS
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* Frameworks
+  * Python Built-in Modules
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* Packages
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  * cloudinary
+  * dj-database-url
+  * dj3-cloudinary-storage
+  * Django
+  * django-allauth
+  * gunicorn
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* Libraries
+  * Balsamiq:
+  * Was used to create wireframes
+  * Bootstrap
+  * Was used to create the front-end design.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* Programs
+  * GitPod:
+  * Gitpod was used as IDE to commit and push the project to GitHub.
+  * GitHub:
+  * Was used for all storing and backup of the code pertaining to the project.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Testing
+I did testing on my webpage troughout the project: Testings performed:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+|Test | What to do | Status |
+|----|:---------|:-------|
+|Tried to navigate troughout the navbar | Click on all links to se if they work | good |
+|Try to book a table| When I want to book a table I get asked to sign up/ log in | good |
+|sign up and sign in| Tried to sign up and then sign in| good |
+|Try sign in with wrong password | When i tried the wrong password I was warned| good |
+|Book a table| Create a new booking and then check if it is passed on to 'My Page' | good |
+|edit a booking| try the button and function edit | good |
+|Delete a booking | Try the button and function delete | good |
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Bugs
+|Test | What to do | Status |
+|----|:---------|:-------|
+|Broken navbar link | The error was in the base.html, it was not connected to the right template| fixed |
+|Got a name error when trying to opend a link| Had a misspelling in the url | fixed|
+|Function for redirecting to 'My page' did not work| Spelled redirect wrong| fixed |
+|ProgrammingError | When trying to book a table I got a programmingerror. Fixed it by resetting the database. Probably caused by changes in the model after migrations| fixed |
+|
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+# Deployment
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# Credits
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Media
+  * Pictures from Pexels
+* Code
+  * Code institutes walktrough project "Hello Django" Was and inspiration when building the view
+  * Bootstraps documentation were used in all templates
+  * Django was used for the fuctionalitis 
+  * Sign in/sing up and sign out codes are from allauth and the css are from the walktrough project
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
