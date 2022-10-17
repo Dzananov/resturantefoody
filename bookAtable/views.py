@@ -13,6 +13,10 @@ from django.contrib import messages
 def home(request):
     return render(request, 'index.html')
 
+
+def menu(request):
+    return render(request, 'menu.html')
+
 # When user goes to book a table he/she first of all must sign up to an account. Fuction redirects user to
 # my bookingpage if the form is valid
 

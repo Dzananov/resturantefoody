@@ -4,6 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
+            <h2>My Bookings</h2>
+            {% for booking in bookings %}
             <div class="card-body">
                 <ul class="font-monospace">
                     <li class='mb-2'>Name:   {{ booking.name | safe }}</li>
@@ -11,7 +13,13 @@
                     <li class='mb-2'>Guests:   {{ reservation.guest | safe }}</li>
                     <li class='mb-2'>Time:   {{ reservation.time | safe }}</li>
                     <li class='mb-2'>Date:   {{ reservation.date | safe }}</li>
+                    <td>
+                        <a href="/edit/{{ booking_.id }}">
+                            <button>Edit Booking</button>
+                        </a>
+                    </td>
                 </ul>
+            {% endfor %}
             </div>
         </div>
     </div>
