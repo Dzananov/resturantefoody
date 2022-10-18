@@ -162,7 +162,12 @@ I did testing on my webpage troughout the project: Testings performed:
   * Bootstraps documentation were used in all templates
   * Django was used for the fuctionalitis 
   * Sign in/sing up and sign out codes are from allauth and the css are from the walktrough project
-  * Footer CSS from "I think therefor I blog"
+  * Footer CSS from "I think therefor I blog" And the same for alert messages code and function in the base.html
+
+## Thanks to
+* Code Institution for education
+* My mentor for mentroing and pushing me to always try my best
+* Tutor support for all help resolving issus
 
 
 
