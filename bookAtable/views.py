@@ -68,4 +68,3 @@ def delete_booking(request, booking_id):
     booking = get_object_or_404(Reservation, id=booking_id)
     booking.delete()
     return redirect('my_page')
-

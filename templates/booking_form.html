@@ -3,24 +3,23 @@
 {% load cloudinary %}
 {% load crispy_forms_tags %}
 
-
-<div class="col-md-4 card mb-4  mt-3 ">
-    <div class="card-body">
-        <!-- For later -->
+<section id="booktablepicture"
+    <div class="col-md-4 card mb-4 mt-3 ">
+        <div class="card-body">
+            <h1 class="font-monospace" id="header">Book A Table</h1>
+            {% if user.is_authenticated %}
+            <form method="POST" style="margin-top: 1.3em; color:aliceblue;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Book</button>
+            </form>
+            {% else %}
         
-        <h1>Book A Table</h1>
-        {% if user.is_authenticated %}
-        <form method="POST" style="margin-top: 1.3em;">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button>Book</button>
-        </form>
-        {% else %}
+            <p>You have to <a href="{% url 'log_in' %}">log in</a> or <a href="{% url 'sign_up' %}">sign up</a> to be able to book a table</p>
         
-        <p>You have to <a href="{% url 'log_in' %}">log in</a> or <a href="{% url 'sign_up' %}">sign up</a> to be able to book a table</p>
-        
-        {% endif %} 
+            {% endif %} 
+        </div>
     </div>
-</div>
+</section>
 
 {% endblock content %}

@@ -8,11 +8,11 @@
             {% for booking in bookings %}
             <div class="card-body">
                 <ul class="font-monospace">
-                    <li class='mb-2'>Name:   {{ booking.name | safe }}</li>
-                    <li class='mb-2'>Email:   {{ booking.email | safe }}</li>
-                    <li class='mb-2'>Guests:   {{ booking.guests | safe }}</li>
-                    <li class='mb-2'>Time:   {{ booking.time | safe }}</li>
-                    <li class='mb-2'>Date:   {{ booking.date | safe }}</li>
+                    <li class='mb-2'>Name: {{ booking.name | safe }}</li>
+                    <li class='mb-2'>Email: {{ booking.email | safe }}</li>
+                    <li class='mb-2'>Guests: {{ booking.guests | safe }}</li>
+                    <li class='mb-2'>Time: {{ booking.time | safe }}</li>
+                    <li class='mb-2'>Date: {{ booking.date | safe }}</li>
                     <td>
                         <a href="/edit/{{booking.id}}">
                             <button>Edit Booking</button>

@@ -117,6 +117,7 @@ I did testing on my webpage troughout the project: Testings performed:
 
 |Test | What to do | Status |
 |----|:---------|:-------|
+|Tested my database | on Herouku i clicked on resources and than on the added postgres | good |
 |Tried to navigate troughout the navbar | Click on all links to se if they work | good |
 |Try to book a table| When I want to book a table I get asked to sign up/ log in | good |
 |sign up and sign in| Tried to sign up and then sign in| good |
@@ -135,6 +136,20 @@ I did testing on my webpage troughout the project: Testings performed:
 |
 
 # Deployment
+## Herouku
+* First deployment
+  * Logged in to my account on herouku
+  * At dashboard I created a new app called "ResturantFoody" and chose region Europe
+  * In Resources I searched for PostGres in the add-ons to use as my database
+  * In settings I revelde my config vars at the same time I created a new file on my workspace called env.py to store my envoiroments
+  * I Connected the database from Herouku(confik vars) and past them in my env.py and I also created a secret key in env.py and copy past the same in my config vars.
+  * I referenced this in settings.py
+  * I added the value of 8000 and key to config vars
+  * I connected cloudinary to env.py and my herouku with the same value and key
+  * Added Allowed Hosts in settings
+  * Went to the deploytab in herouku
+  * searched for my github repo(my github was already connected)
+  * Then clicked on deploy branch
 
 # Credits
 

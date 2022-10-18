@@ -8,7 +8,7 @@
             <div class="col-md-7">
                 <h2 class="font-monospace">About Us</h2>
                 <br>
-                <p class="font-monospace">Welcome to Foody Hamburger Resturant! Foody was started in 2022 and is Based in Sweden, Malmö. We have two resturantes but hopefully we will be able to open
+                <p id="abouttext" class="font-monospace">Welcome to Foody Hamburger Resturant! Foody was started in 2022 and is Based in Sweden, Malmö. We have two resturantes but hopefully we will be able to open
                     more resturantes outside of Malmö. Foody has developed a special hamburgersauce that makes our hamburger taste unique. All our ingridiences are from Sweden and therefor ecological. We can assure you that
                     you will be pleased with our food. Imagin eating a hamburger with freshly baked bread, perfectly grilled meat, melted cheese, fresch vegetables and
                     than our magical sauce. You wont regrate visiting us!
@@ -23,13 +23,13 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="febg gv aturette-heading fw-normal lh-1">Bakery</h2>
-                <p id="abouttext" class="font-monospace textabout">We bake our delicious bread at our own bakery. That way we can garantee that the bread is fresch when served. 
+                <p class="font-monospace">We bake our delicious bread at our own bakery. That way we can garantee that the bread is fresch when served. 
                     We get provided by Swedish farmers for our grain. In that way we can keep oyr bread ecological. We also always use freschly baked bread and
                     yesterdays bread we donate to whoever is in need for it! We have different kinds of bread, white bread, dark bread, grainless-bread,
                     lactofriendly bread and bread with a base made of oats</p>
             </div>
             <div class="col-md-5">
-                <img src="static/images/hamburger3.jpg" class="img-fluid" width="500" height="500" alt="hamburger2">
+                {% load static %} <img src="{% static "images/hamburger3.jpg" %}" class="img-fluid" width="500" height="500" alt="hamburger2"/>
             </div>
         </div>
         <!--about our meat-->
@@ -42,9 +42,55 @@
                 </p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="static/images/cow.jpg" class="img-fluid" width="500" height="500" alt="hamburger2">
+                {% load static %} <img src="{% static "images/cow.jpg" %}" class="img-fluid" width="500" height="500" alt="hamburger2"/>
             </div>
         </div>
     </div>
+    <hr class="featurette-divider">
+    <div class="container marketing">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <h2 class="font-monospace">A unique <span class="text-muted">..Menu</span></h2>
+                  <p class="font-monospace">Welcome to Foody's menu page. All our costumers decide by themself what to put in theuir hamburgers. All burgers are plant-based 
+                      and containe soybeans and peas and with a little pinch of quionoa. You can choose between some of our freschly baked bread, afterwards you choose what to put in your 
+                      burger and last, but absolutly not least, sideorders! And best thing is that all menus cost 15$. 
+                  </p>
+              </div>
+            <br>
+          <!-- The bread options-->
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="font-monospace">Choose Your bread</h4>
+            <figure class="figure">
+                {% load static %} <img src="{% static "images/bread.jpg" %}" class="menu-img img-fluid" alt="bread" />
+              <figcaption class="figure-caption"><li class="font-monospace">Dark bread based on oats</li>
+                <li class="font-monospace">White bread based on flour</li>
+                <li class="font-monospace">White bread based on oats</li>
+                <li class="font-monospace">Bread without milk and butter based on oats</li></figcaption>
+            </figure>
+          </div><!-- the hamburger content options -->
+          <div class="col-md-4">
+            <h4 class="font-monospace">Content</h4>
+              <figure class="figure">
+                {% load static %} <img src="{% static "images/vegetable2.jpg" %}" class="menu-img img-fluid" alt="vegetables" />
+                <figcaption class="figure-caption"><li class="font-monospace">Vegetables: Cuecumber, tomate, onion, sallad</li>
+                  <li class="font-monospace">Regular Cheese or Vegan Cheese</li>
+                  <li class="font-monospace">Our special souce or ketchup and majones</li></figcaption>
+              </figure>
+          </div><!-- the sideorder options -->
+          <div class="col-md-4">
+            <h4 class="font-monospace">Sideorder</h4>
+            <figure class="figure">
+                {% load static %} <img src="{% static "images/fries.jpg" %}" class="figure-img img-fluid rounded" alt="home" />
+              <figcaption class="figure-caption"><li class="font-monospace">Fries</li>
+                <li class="font-monospace">Sweet potato fries</li>
+                <li class="font-monospace">Carrot sticks</li></figcaption>
+            </figure>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+      </div>
+      
+      
+   
     
 {% endblock %}
