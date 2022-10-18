@@ -5,20 +5,16 @@ from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 
-# from .forms import ReservTableform
 
-# Homepage is a simple page with e menu section where user can redirect further
+""" Homepage is a simple page with e menu section where user can redirect further. Function that shows homepage"""
 
 
 def home(request):
     return render(request, 'index.html')
 
 
-def menu(request):
-    return render(request, 'menu.html')
-
-# When user goes to book a table he/she first of all must sign up to an account. Fuction redirects user to
-# my bookingpage if the form is valid
+"""This function will enable bookings for signed in users. If user is signed in will be checked trough the template. the booking
+will be renderd to The My bookings page"""
 
 
 def book_a_Table(request):
@@ -38,6 +34,9 @@ def book_a_Table(request):
     return render(request, 'booking_form.html', context)
 
 
+"""Here is the view function for the bookings that is made"""
+
+
 def my_page(request):
     if request.user.is_authenticated:
         model = Reservation
@@ -46,6 +45,9 @@ def my_page(request):
             'bookings': bookings
         }
         return render(request, 'mybookings.html', context)
+
+
+"""The user can edit bookings and save the changes to the My Booking page"""
 
 
 def edit_bookings(request, booking_id):
@@ -62,6 +64,9 @@ def edit_bookings(request, booking_id):
         'form': form
     }
     return render(request, 'edit_booking.html', context)
+
+
+"""The user can delete bookings and they will disappear"""
 
 
 def delete_booking(request, booking_id):

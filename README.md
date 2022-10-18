@@ -42,14 +42,13 @@ Agil methodology aims to complete tasks in small steps. Thats the main method I 
 
 # Design
 
-Design was choosen when the team got more clear. I have changed my design a couple of times but when I was sure about my resturante concept, it was easyer to design.
+Design was choosen when the team got more clear. I have changed my design a couple of times but when I was sure about my resturante concept, it was easyer to design.  I went for a feeling of modern, neutral, nostaligcal feeling that is pleasent to look at
 
-## Colour
-
-## Font
 
 ## Wireframes
-PICTURE
+My first outcast of wirefram looks like this. Then I worked with this wirefram as my base and the improved it so it would fit the concept.
+
+![bild](readme.images/wireframe.jpg)
 
 # Features
 ## Existing Features
@@ -57,22 +56,24 @@ PICTURE
 The user can navigate troughout the page by clicking on the menu links.
 * Heroimage
 User will be greated by a beautiful, suiting picture.
-PICTURE
+![bild](readme.images/navbar.jpg)
 * About
 In the aboutsection; user can read about the resturante
-PICTURE
 * Menu
 User can read the unique menu.
-PICTURE
+![bild](readme.images/menu.jpg)
 * Sign up
 User can sign up to be able to book a table and manage bookings
-PICTURE
+![bild](readme.images/signup.jpg)
 * Sign in and sign out
 User can sign in and out
-PICTURES
+![bild](readme.images/signin.jpg)
+![bild](readme.images/signout.jpg.jpg)
+* Book a table
+![bild](readme.images/booktable.jpg)
 * Manage bookings
 User can manage bookings trough 'My page'. User can edit and delete bookings
-PICTURE
+![bild](readme.images/bookings.jpg)
 
 ## Future Features
 
@@ -86,7 +87,7 @@ PICTURE
 * JavaScript
 * HTML
 * CSS
-
+<br>
 * Frameworks
   * Python Built-in Modules
 
@@ -111,7 +112,8 @@ PICTURE
   * Gitpod was used as IDE to commit and push the project to GitHub.
   * GitHub:
   * Was used for all storing and backup of the code pertaining to the project.
-
+## Supported frames
+The website is responsive and is tested on iPhone SE, Ipad Mini and regular desktop.
 ## Testing
 I did testing on my webpage troughout the project: Testings performed:
 
@@ -149,7 +151,7 @@ I did testing on my webpage troughout the project: Testings performed:
   * Added Allowed Hosts in settings
   * Went to the deploytab in herouku
   * searched for my github repo(my github was already connected)
-  * Then clicked on deploy branch
+  * Then clicked on deploy branch 
 
 # Credits
 
@@ -160,6 +162,7 @@ I did testing on my webpage troughout the project: Testings performed:
   * Bootstraps documentation were used in all templates
   * Django was used for the fuctionalitis 
   * Sign in/sing up and sign out codes are from allauth and the css are from the walktrough project
+  * Footer CSS from "I think therefor I blog"
 
 
 
