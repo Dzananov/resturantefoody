@@ -13,11 +13,12 @@ Foody Hamburger Resturant is A fictional resturante located in Malmö, Sweden. A
  * [Existing-Features](#Existing-Features)
  * [Future-Features](#Future-Features)
 * [Technology](#Technology)
- * [Testing] (#Testing)
+ * [Testing](#Testing)
  * [Bugs](#Bugs)
 * [Credits](#Credits)
 * [Deployment](#Deployment)
-
+ * [Heroku](#Heroku)
+ * [Github](#Github)
 
 # User Story
 ## Goal
@@ -53,27 +54,21 @@ My first outcast of wirefram looks like this. Then I worked with this wirefram a
 # Features
 ## Existing Features
 * Nav-bar
-The user can navigate troughout the page by clicking on the menu links.
+The user can navigate troughout the page by clicking on the menu links. User can only see three navbar links when not loged in. 'Home', ' Book a Table' and 'Sign in'. When clicked on 'Book a Table' User can only choose by singing in or singing up. This to be able to check out the rest of the page
 * Heroimage
 User will be greated by a beautiful, suiting picture.
-![bild](readme.images/navbar.jpg)
 * About
-In the aboutsection; user can read about the resturante
+In the aboutsection; user can read about the resturante and what the resturant offers. This can be seen even when not loged in.
 * Menu
-User can read the unique menu.
-![bild](readme.images/menu.jpg)
+User can read the unique menu adn choose what kind of food we offer. This can be done even when not loged in
 * Sign up
-User can sign up to be able to book a table and manage bookings
-![bild](readme.images/signup.jpg)
+User can sign up and become a member of Foody Resturant. When a member user can book tables and will get discount codes to email every now and then. Also news and other interestings facts will be sent to every member.
 * Sign in and sign out
-User can sign in and out
-![bild](readme.images/signin.jpg)
-![bild](readme.images/signout.jpg.jpg)
-* Book a table
-![bild](readme.images/booktable.jpg)
+If user is a member he or she can sign in and book a table right away. User can also sign out. The 'Sign out' link on the nav bar is only visible for loged in users.
+* Book a table. Users who are signed in can choose to book a table. When booked successfully, user will be redirected to the 'My Bookings' page(wich is also only visible for loged in users). User can make more than one booking in his or her name.
 * Manage bookings
-User can manage bookings trough 'My page'. User can edit and delete bookings
-![bild](readme.images/bookings.jpg)
+User can manage their bookings on their 'My Booking' Page. They can edit and delete bookings. When editing a booking  user will be redirected to a booking form again where they can edit their booking. And also save the booking. When they save they will be redirected back to 'My bookings' page. on 'My Bookings' They can also choose to delete the booking. The booking will just disappear then.
+
 
 ## Future Features
 
@@ -88,6 +83,7 @@ User can manage bookings trough 'My page'. User can edit and delete bookings
 * HTML
 * CSS
 <br>
+
 * Frameworks
   * Python Built-in Modules
 
@@ -119,27 +115,42 @@ I did testing on my webpage troughout the project: Testings performed:
 
 |Test | What to do | Status |
 |----|:---------|:-------|
-|Tested my database | on Herouku i clicked on resources and than on the added postgres | good |
-|Tried to navigate troughout the navbar | Click on all links to se if they work | good |
-|Try to book a table| When I want to book a table I get asked to sign up/ log in | good |
-|sign up and sign in| Tried to sign up and then sign in| good |
-|Try sign in with wrong password | When i tried the wrong password I was warned| good |
-|Book a table| Create a new booking and then check if it is passed on to 'My Page' | good |
-|edit a booking| try the button and function edit | good |
-|Delete a booking | Try the button and function delete | good |
+|Tested my database | on Herouku i clicked on resources on the navbar and than on the added postgres link. It will display a page with a succsess message  | good |
+|Tried to navigate troughout the navbar | Open my webpage and tried to click on my navbar links and when one worked I pressed the 'Home' and then I went on to the other navbar link| good |
+|Try to book a table| When i am not logged in and click on the 'Book a Table' navbar link I will be redirected to another page saying I have to sign in or sign up as a member| good |
+|sign up and sign in| I first try to fill in the sign up form on the page and then I click submit. on my navbar will change and show 'Book a Table', 'Sign Out' and 'My Bookings'.| good |
+|Try sign in with wrong password | I log out and click on 'Book a Table' link on the navbar and then i click on the link 'Sign In'. I get redirectewd to another page where I can fill out my username and password. I try to fill out the wrong password. I get a meesage saying I cannot log in because invalid username or password. I then fill oput the right information and I log in succsessfully| good |
+|Book a table| I then click on the navbar link ' Book a Tabel' I get redirected to a page with a booking form. I fill it out and click 'Book' I then get redirected to 'My Bookings' Page with a message saying my booking was confirmed. I can also se my booking on the 'My bookings' page.| good |
+|edit a booking| Under my booking on 'My Bookings' Page I can se a button for edit. When I click on that i get redirected to my bookingform again and there I can change something in the booing and than sav changes, When saved I get redirected back to 'My bookings' | good |
+|Delete a booking | Beside the 'Edit' button I have a 'Delete' button. I try to click on it and my booking will disappear| good |
+
+TestCase 1
+![bild](readme.images/navbar.jpg)
+
+TestCase 3
+Sign up form
+![bild](readme.images/signup.jpg)
+TestCase 4
+![bild](readme.images/signout.jpg.jpg)
+TestCase 5 
+![bild](readme.images/signin.jpg)
+TestCase 6
+![bild](readme.images/booktable.jpg)
+TestCase 7
+![bild](readme.images/bookings.jpg)
 
 ## Bugs
 |Test | What to do | Status |
 |----|:---------|:-------|
-|Broken navbar link | The error was in the base.html, it was not connected to the right template| fixed |
-|Got a name error when trying to opend a link| Had a misspelling in the url | fixed|
-|Function for redirecting to 'My page' did not work| Spelled redirect wrong| fixed |
-|ProgrammingError | When trying to book a table I got a programmingerror. Fixed it by resetting the database. Probably caused by changes in the model after migrations| fixed |
+|Broken navbar link | The error was in the base.html, it was not connected to the right template. Insted of href='{% url account_login%} It just said href=#.| fixed |
+|Got a Template dose not exist error when trying to opend 'My Bookings' page in the navbar| Had not yet connected my view function for the 'My Bookings' to an URL path in URL in the bookAtable folder | fixed|
+|Function for redirecting to 'My page' did not work| when I was writing my book_a_table function I wrote 'return redirect('my page') when I should have written ('my_page') the underscore was missing and was throwing an error.| fixed |
+|ProgrammingError | When trying to book a table I got a programmingerror. Fixed it by resetting the database. I did it trough heroku. Went to resources on my heroku page, then clicked on the postgres link and clicked on 'Reset database'. Later I had to creat a new superuser and also makemigrations and migrate again. Probably caused by changes in the model after migrations| fixed |
 |
 
 # Deployment
-## Herouku
-* First deployment
+## Heroku
+
   * Logged in to my account on herouku
   * At dashboard I created a new app called "ResturantFoody" and chose region Europe
   * In Resources I searched for PostGres in the add-ons to use as my database
@@ -152,6 +163,12 @@ I did testing on my webpage troughout the project: Testings performed:
   * Went to the deploytab in herouku
   * searched for my github repo(my github was already connected)
   * Then clicked on deploy branch 
+
+## Github
+  * Go to settings
+  * Click on pages at the sidebar
+  * Choose to save on 'main'
+  * Save
 
 # Credits
 

@@ -21,12 +21,13 @@ def book_a_Table(request):
     if request.method == 'POST':
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
+            booking_form = booking_form.save(commit=False)
             booking_form.user = request.user
             booking_form.save()
             messages.success(request, 'Booking is Complete')
             return redirect('my_page')
         else:
-            messages.error(request, 'Invalid form')
+            messages.error(request, 'Check if all the fields are filled and or you are trying to add a double booking')
     form = BookingForm()
     context = {
         'form': form
