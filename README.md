@@ -77,6 +77,17 @@ User can manage their bookings on their 'My Booking' Page. They can edit and del
 
 # Technology
 
+## Validator
+
+* PEP8 check. I had some error regarding the to long lines in my codes. But also I got error for not having a whitespace around operator '=' on line 22,24,25,55. If I put I whitespace there my code do not work proparly.
+![bild](readme.images/pep8valdiator.jpg)
+
+* W3 HTML Validator: I got errors on all my static files. I choose to ignore them because the images worked just fine.
+![bild](readme.images/htmlvali.jpg)
+
+* Jigsaw validator for CSS o errors detected
+![bild](readme.images/cssvali.jpg)
+
 ## Languages
 * Python
 * JavaScript
